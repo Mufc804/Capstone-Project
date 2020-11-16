@@ -4,8 +4,8 @@
 
 Fashionista contains the angular project.  
 To launch, run: 
-1. npm install
-2. ng serve -o
+1. `npm install`
+2. `ng serve -o`
 
 ## Fashionista-Server
 
