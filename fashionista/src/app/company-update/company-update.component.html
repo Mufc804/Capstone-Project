@@ -1,0 +1,22 @@
+<div class="text-center">
+    <h1>Update Existing Company</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="company.cname" formControlName="cname"
+                        [ngClass]="{'is-invalid': submitted && f.cname.errors}" />
+                    <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                        <div *ngIf="f.cname.errors.required"> required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

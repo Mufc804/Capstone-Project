@@ -1,0 +1,28 @@
+<div class="text-center">
+    <h1>Manage Products</h1>
+</div>
+<div>
+    <div class="text-center">
+        <button type="button" class="btn btn-dark btn-lg mb-2 mt-2" [routerLink]="['/productStore']">Add Product</button>
+    </div>
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Details</th>
+            <th>Product Image</th>
+            <th>Product Price</th>
+            <th>Company Name</th>
+        </tr>
+        <tr *ngFor="let pp of products">
+            <td>{{pp._id}}</td>
+            <td>{{pp.pname}}</td>
+            <td>{{pp.details}}</td>
+            <td>{{pp.image}}</td>
+            <td>${{pp.price}}</td>
+            <td>{{pp.company}}</td>
+            <button class="btn btn-light mr-3" [routerLink]="['/productUpdate', pp._id]">Update</button>
+            <button class="btn btn-light" (click)="deleteProductById(pp._id)">Delete</button>
+        </tr>
+    </table>
+</div>

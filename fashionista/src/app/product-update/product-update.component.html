@@ -1,0 +1,57 @@
+<div class="text-center">
+    <h1>Update Existing Company</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.pname" formControlName="pname"
+                        [ngClass]="{'is-invalid': submitted && f.pname.errors}" />
+                    <div *ngIf="submitted && f.pname.errors" class="invalid-feedback">
+                        <div *ngIf="f.pname.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Details</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.details" formControlName="details"
+                        [ngClass]="{'is-invalid': submitted && f.details.errors}" />
+                    <div *ngIf="submitted && f.details.errors" class="invalid-feedback">
+                        <div *ngIf="f.details.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.image" formControlName="image"
+                        [ngClass]="{'is-invalid': submitted && f.image.errors}" />
+                    <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                        <div *ngIf="f.image.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Price</label>
+                    <input type="text" class="form-control" [(ngModel)]="product.price" formControlName="price"
+                        [ngClass]="{'is-invalid': submitted && f.price.errors}" />
+                    <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                        <div *ngIf="f.price.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Company</label>
+                    <select class="selectpicker dropdown form-control" [(ngModel)]="product.company"
+                        formControlName="company" data-live-search="true">
+                        <option *ngFor="let company of companies" [value]="company._id">{{company.cname}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

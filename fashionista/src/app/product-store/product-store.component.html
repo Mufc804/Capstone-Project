@@ -1,0 +1,33 @@
+<div class="text-center">
+    <h1>Add Product</h1>
+</div>
+<div class="container mt-3">
+    <form [formGroup]="productRef" (ngSubmit)="storeProductDetails()" ngNativeValidate>
+        <div class="form-group">
+            <label>Product Id</label>
+            <input type="text" class="form-control" formControlName="_id" required>
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" formControlName="pname" required>
+        </div>
+        <div class="form-group">
+            <label>Product Details</label>
+            <input type="text" class="form-control" formControlName="details" required>
+        </div>
+        <div class="form-group">
+            <label>Product Image</label>
+            <input type="text" class="form-control" formControlName="image" required>
+        </div>
+        <div class="form-group">
+            <label>Product Price</label>
+            <input type="text" class="form-control" formControlName="price" required>
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" class="form-control" formControlName="company" required>
+        </div>
+        <input class="btn btn-dark btn-lg" type="submit" value="Add">
+    </form>
+    {{result}}
+</div>

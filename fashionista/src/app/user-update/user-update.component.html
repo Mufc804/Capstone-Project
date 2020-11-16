@@ -1,0 +1,41 @@
+<div class="text-center">
+    <h1>Update Existing User</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.username" formControlName="username"
+                        [ngClass]="{'is-invalid': submitted && f.username.errors}" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.email" formControlName="email"
+                        [ngClass]="{'is-invalid': submitted && f.email.errors}" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="user.password" formControlName="password"
+                        [ngClass]="{'is-invalid': submitted && f.password.errors}" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required"> required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

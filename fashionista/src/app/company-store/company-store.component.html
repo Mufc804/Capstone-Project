@@ -1,0 +1,17 @@
+<div class="text-center">
+    <h1>Add Company</h1>
+</div>
+<div class="container mt-3">
+    <form [formGroup]="compRef" (ngSubmit)="storeCompanyDetails()" ngNativeValidate>
+        <div class="form-group">
+            <label>Company Id</label>
+            <input type="text" class="form-control" formControlName="_id" required>
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" class="form-control" formControlName="cname" required>
+        </div>
+        <input class="btn btn-dark btn-lg" type="submit" value="Add">
+    </form>
+    {{result}}
+</div>
