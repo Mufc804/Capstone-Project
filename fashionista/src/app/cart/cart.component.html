@@ -1,19 +1,19 @@
 <div class="text-center">
     <h1>Your Cart</h1>
-    <button class="btn btn-dark" (click)="clearCart()">Clear Cart</button>
+    <button class="btn btn-warning" (click)="clearCart()">Clear Cart</button>
 </div>
 <div class="container mt-3">
     <div *ngFor="let item of items">
         <ul class="list-group">
             <li class="list-group-item">{{item.pname}} | ${{item.price}} <img src="assets/imgs/{{item.image}}"
                     width="100" height="100">
-                    <button class="btn btn-dark float-right mt-3" (click)="removeItem(item)">Remove</button>
+                    <button class="btn btn-danger float-right mt-3" (click)="removeItem(item)">Remove</button>
             </li>
         </ul>
     </div>
     <div class="text-center">
         <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" ngNativeValidate>
-            <button type="submit" class="btn btn-dark btn-lg mb-2 mt-2">Checkout</button>
+            <button type="submit" class="btn btn-success btn-lg mb-2 mt-2">Checkout</button>
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" class="form-control" formControlName="name" required>
